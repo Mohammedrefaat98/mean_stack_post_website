@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  width:90%;
+  margin: 1rem auto;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+.info-text {
+  text-align: center;
+}
+
+.image img{
+  width: 100%;
+}
