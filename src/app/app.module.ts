@@ -15,13 +15,17 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { SignupComponent } from './auth/signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostCreateComponent,
     HeaderComponent,
-    PostListComponent
+    PostListComponent,
+    SignupComponent,
+    LoginComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -34,7 +38,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatExpansionModule,
     HttpClientModule,
     MatProgressSpinnerModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    FormsModule
   ],
   providers: [
     provideAnimationsAsync('animations')

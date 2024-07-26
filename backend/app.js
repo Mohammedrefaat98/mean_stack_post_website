@@ -3,12 +3,13 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const path = require('path');
 const postsRoutes = require("./routes/posts");
+const usersRoutes = require("./routes/users");
 
 const app = express();
 
 mongoose
   .connect(
-    "mongodb+srv://user:UsEr@cluster0.ak3lg0v.mongodb.net/mean?retryWrites=true"
+    "mongodb+srv://user:UsEr@cluster0.ak3lg0v.mongodb.net/mean"
   )
   .then(() => {
     console.log("Connected to database!");
@@ -34,5 +35,6 @@ app.use((req, res, next) => {
 });
 
 app.use("/api/posts", postsRoutes);
+app.use("/api/users", usersRoutes);
 
 module.exports = app;
