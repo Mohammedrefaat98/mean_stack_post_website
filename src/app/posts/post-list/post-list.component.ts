@@ -32,9 +32,12 @@ export class PostListComponent implements OnInit,OnDestroy{
         this.size = postData.postCount;
         this.posts = postData.posts;
       });
-    this.userIsAuthenticated= this.authService.getIsAuth()
-    this.authStatSubs= this.authService.getAuthStateListener().subscribe(isAuthenticated => 
-      this.userIsAuthenticated=isAuthenticated
+      this.userIsAuthenticated= this.authService.getIsAuth();
+      this.authStatSubs= this.authService.getAuthStateListener().subscribe(isAuthenticated => 
+      {
+        console.log("blyat");
+        this.userIsAuthenticated=isAuthenticated
+      }
     )
   }
   ngOnDestroy(): void {
