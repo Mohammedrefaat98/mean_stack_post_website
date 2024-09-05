@@ -20,6 +20,7 @@ export class PostListComponent implements OnInit,OnDestroy{
   currentPage=1;
   userIsAuthenticated = false;
   private authStatSubs: Subscription;
+  userId: string | null;
   constructor (public postService: PostsService, public authService: AuthService){}
   
   ngOnInit(): void {
@@ -33,9 +34,9 @@ export class PostListComponent implements OnInit,OnDestroy{
         this.posts = postData.posts;
       });
       this.userIsAuthenticated= this.authService.getIsAuth();
+      this.userId= this.authService.getUserId();
       this.authStatSubs= this.authService.getAuthStateListener().subscribe(isAuthenticated => 
       {
-        console.log("blyat");
         this.userIsAuthenticated=isAuthenticated
       }
     )
