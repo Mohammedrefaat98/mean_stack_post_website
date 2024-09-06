@@ -47,7 +47,7 @@ exports.login=(req,res,next) => {
         email: fetchedUser[0].email,
         user_id: fetchedUser[0]._id
       },
-      'secret_this_should_be_longer',
+      process.env.JWT_KEY,
       {expiresIn:'1h'}
     )
     res.status(200).json({
